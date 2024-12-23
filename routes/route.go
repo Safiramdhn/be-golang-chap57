@@ -23,7 +23,7 @@ func NewRoutes(ctx infra.ServiceContext) {
 	{
 		notificationRoutes.POST("/order", ctx.Ctl.Notification.SendOrderMail)
 		notificationRoutes.POST("/payment", ctx.Ctl.Notification.SendPaymentMail)
-		notificationRoutes.GET("/delivery", ctx.Ctl.Notification.All)
+		notificationRoutes.GET("/", ctx.Ctl.Notification.All)
 	}
 
 	gracefulShutdown(ctx, r.Handler())
