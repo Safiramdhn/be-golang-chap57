@@ -61,7 +61,7 @@ func setDefaultValues() {
 	viper.SetDefault("DB_NAME", "database")
 	viper.SetDefault("APP_DEBUG", true)
 	viper.SetDefault("APP_SECRET", "team-1")
-	viper.SetDefault("SERVER_PORT", ":8080")
+	viper.SetDefault("SERVER_PORT", ":8084")
 	viper.SetDefault("SHUTDOWN_TIMEOUT", 5)
 
 	viper.SetDefault("PROFIT_MARGIN", 10.00)
