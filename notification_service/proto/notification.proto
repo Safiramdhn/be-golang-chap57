@@ -2,43 +2,35 @@ syntax = "proto3";
 
 package notification;
 
-option go_package = "./notification";
+option go_package = "./notification_service/proto";
 
 // NotificationService defines the RPC methods for notifications.
 service NotificationService {
-    // Sends an order notification email.
     rpc SendOrderMail(OrderNotificationRequest) returns (NotificationResponse);
-    // Sends a payment notification email.
     rpc SendPaymentMail(PaymentNotificationRequest) returns (NotificationResponse);
-    // Retrieves all notifications.
     rpc GetAllNotifications(Empty) returns (NotificationListResponse);
 }
 
-// OrderNotificationRequest is the request message for sending order notifications.
 message OrderNotificationRequest {
     string user_email = 1;
     int64 order_id = 2;
     string subject = 3;
 }
 
-// PaymentNotificationRequest is the request message for sending payment notifications.
 message PaymentNotificationRequest {
     string user_email = 1;
     int64 payment_id = 2;
     string subject = 3;
 }
 
-// NotificationResponse is the response message containing a single notification.
 message NotificationResponse {
     Notification notification = 1;
 }
 
-// NotificationListResponse is the response message containing a list of notifications.
 message NotificationListResponse {
     repeated Notification notifications = 1;
 }
 
-// Notification defines the structure of a notification message.
 message Notification {
     string id = 1;
     string user_email = 2;
@@ -49,5 +41,4 @@ message Notification {
     bool is_sent = 7;
 }
 
-// Empty is an empty message for RPC methods that do not require input.
 message Empty {}

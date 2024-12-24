@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: notification.proto
 
-package notification
+package proto
 
 import (
 	context "context"
@@ -30,11 +30,8 @@ const (
 //
 // NotificationService defines the RPC methods for notifications.
 type NotificationServiceClient interface {
-	// Sends an order notification email.
 	SendOrderMail(ctx context.Context, in *OrderNotificationRequest, opts ...grpc.CallOption) (*NotificationResponse, error)
-	// Sends a payment notification email.
 	SendPaymentMail(ctx context.Context, in *PaymentNotificationRequest, opts ...grpc.CallOption) (*NotificationResponse, error)
-	// Retrieves all notifications.
 	GetAllNotifications(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*NotificationListResponse, error)
 }
 
@@ -82,11 +79,8 @@ func (c *notificationServiceClient) GetAllNotifications(ctx context.Context, in 
 //
 // NotificationService defines the RPC methods for notifications.
 type NotificationServiceServer interface {
-	// Sends an order notification email.
 	SendOrderMail(context.Context, *OrderNotificationRequest) (*NotificationResponse, error)
-	// Sends a payment notification email.
 	SendPaymentMail(context.Context, *PaymentNotificationRequest) (*NotificationResponse, error)
-	// Retrieves all notifications.
 	GetAllNotifications(context.Context, *Empty) (*NotificationListResponse, error)
 	mustEmbedUnimplementedNotificationServiceServer()
 }

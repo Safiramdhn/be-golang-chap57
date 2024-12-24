@@ -4,7 +4,7 @@
 // 	protoc        v3.12.4
 // source: notification.proto
 
-package notification
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -20,7 +20,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// OrderNotificationRequest is the request message for sending order notifications.
 type OrderNotificationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -84,7 +83,6 @@ func (x *OrderNotificationRequest) GetSubject() string {
 	return ""
 }
 
-// PaymentNotificationRequest is the request message for sending payment notifications.
 type PaymentNotificationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -148,7 +146,6 @@ func (x *PaymentNotificationRequest) GetSubject() string {
 	return ""
 }
 
-// NotificationResponse is the response message containing a single notification.
 type NotificationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -196,7 +193,6 @@ func (x *NotificationResponse) GetNotification() *Notification {
 	return nil
 }
 
-// NotificationListResponse is the response message containing a list of notifications.
 type NotificationListResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -244,7 +240,6 @@ func (x *NotificationListResponse) GetNotifications() []*Notification {
 	return nil
 }
 
-// Notification defines the structure of a notification message.
 type Notification struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -340,7 +335,6 @@ func (x *Notification) GetIsSent() bool {
 	return false
 }
 
-// Empty is an empty message for RPC methods that do not require input.
 type Empty struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -441,8 +435,9 @@ var file_notification_proto_rawDesc = []byte{
 	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x26, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69,
 	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x42, 0x10, 0x5a, 0x0e, 0x2e, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x65, 0x42, 0x1e, 0x5a, 0x1c, 0x2e, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
